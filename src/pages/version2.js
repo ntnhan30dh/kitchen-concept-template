@@ -6,19 +6,18 @@ import "../styles/index.scss"
 import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"
 
-import Header from "../components/header"
 import Header2 from "../components/header2"
 // markup
-const IndexPage = () => {
+const Version2 = () => {
  
   return (
     <main >
       <title>Kitchen Concept</title>
       < MenuProvider> 
-    <Header  /> 
+    <Header2  /> 
   </MenuProvider>
     </main>
   )
 }
 
-export default IndexPage
+export default Version2
