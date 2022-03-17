@@ -8,6 +8,7 @@ import {StyleProvider} from "../components/context/styleContext"
 
 import Header from "../components/header"
 import Footer from "../components/Footer"
+import Description from "../components/Description"
 // markup
 const IndexPage = () => {
  
@@ -18,6 +19,7 @@ const IndexPage = () => {
     <Header  /> 
   </MenuProvider>
   < StyleProvider> 
+    <Description/>  
     <Footer/>  
   </StyleProvider>
     </main>

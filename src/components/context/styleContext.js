@@ -13,7 +13,8 @@ export const StyleProvider = ({children}) => {
     px: '',
     text : {
       action2:" text-sm md:text-base",
-      h2: "", 
+      body1:"text-16px md:text-2xl",
+      h2: " font-bold text-2xl md:text-40px", 
       h4: "font-bold  text-base md:text-2xl", 
       p: "",
     }

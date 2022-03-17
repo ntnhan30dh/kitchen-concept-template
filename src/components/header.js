@@ -1,7 +1,10 @@
 import React from "react";
-import logo from "../images/logo.png";
 import { Link } from "gatsby";
+
+import logo from "../images/logo.png";
+
 import { useMenu, useMenuUpdate } from "../components/context/menuContext";
+import OrderNow from '../components/OrderNow'
 
 const Header = (props) => {
   const menuState = useMenu();
@@ -60,8 +63,8 @@ const Header = (props) => {
             <Link to="/" href="" className={link1}>
               <span className={span1}><span className="font-bold"> Eng </span>  | Esp</span>
             </Link>
-            <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-6 tracking-wider"> order now </span> </button>
-
+            {/* <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-6 tracking-wider"> order now </span> </button> */}
+            <OrderNow padding="py-4 px-6"/>
         </div>
 
         {/* mobile  */}
@@ -94,7 +97,8 @@ const Header = (props) => {
             <Link onClick={toggleMenu} to="/" className={link}>
               <span className={span}> <span className="font-bold"> Eng </span>  | Esp</span>
             </Link>
-            <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-20 tracking-wider"> order now </span> </button>
+            {/* <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-20 tracking-wider"> order now </span> </button> */}
+            <OrderNow padding="py-4 px-20"/>
           </div>
         </div>
         <div
