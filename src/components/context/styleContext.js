@@ -10,10 +10,12 @@ export const useStyle = () => {
 
 export const StyleProvider = ({children}) => {
   const style = {
-    px: 'px-1/10',
+    px: '',
     text : {
-      h2: "text-4xl md:text-6xl lg:text-8xl", 
-      p: "text-lg md:text-xl lg:text-2xl",
+      action2:" text-sm md:text-base",
+      h2: "", 
+      h4: "font-bold  text-base md:text-2xl", 
+      p: "",
     }
 
 }

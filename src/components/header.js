@@ -66,7 +66,7 @@ const Header = (props) => {
 
         {/* mobile  */}
         <div
-          className={`mobile header_rightDiv  hidden  justify-center  h-screen w-full absolute top-0 right-0 bg-green ${menuActive}`}
+          className={`mobile header_rightDiv  hidden  justify-center  h-screen w-full absolute top-0 right-0 bg-white ${menuActive}`}
         >
           <div className=" flex flex-col md:hidden mt-28">
             <Link

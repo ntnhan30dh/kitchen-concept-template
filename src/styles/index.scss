@@ -6,6 +6,7 @@ body {
     margin: 0;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
+    color:  #333333;;
   }
 
   // header
@@ -51,5 +52,14 @@ body {
   
     .is-inactive {
       display: inline-flex;
+    }
+  }
+
+  // footer
+  .footer{
+    ul {
+      li{
+        margin-top: 0.5rem;
+      }
     }
   }

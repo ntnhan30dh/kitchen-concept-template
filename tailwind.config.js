@@ -6,6 +6,9 @@ module.exports = {
         grayBlack: "#333333",
         blue:"#2F40DA",
       },
+      fontSize: {
+        '2xl': ['24px', '28px'],
+    },
     },
   },
   plugins: [],

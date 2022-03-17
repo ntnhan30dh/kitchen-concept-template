@@ -7,7 +7,7 @@ import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"
 
 import Header from "../components/header"
-import Header2 from "../components/header2"
+import Footer from "../components/Footer"
 // markup
 const IndexPage = () => {
  
@@ -17,6 +17,9 @@ const IndexPage = () => {
       < MenuProvider> 
     <Header  /> 
   </MenuProvider>
+  < StyleProvider> 
+    <Footer/>  
+  </StyleProvider>
     </main>
   )
 }
