@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 import Carousel from "./Carousel";
+import Menu2 from "./Menu2";
 import { useStyle } from "./context/styleContext";
 
-const Menu = () => {
+const Menu = (props) => {
   let [menuType, setMenuType] = useState("category1");
 
   const style = useStyle();
@@ -59,8 +60,8 @@ const Menu = () => {
         })}
       </ul>
       </div>
-
-      <Carousel type={menuType} />
+     {props.type===1 && <Carousel type={menuType} />}
+     {props.type===2 && <Menu2 type={menuType}  />}
     </section>
   );
 };

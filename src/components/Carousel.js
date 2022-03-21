@@ -56,11 +56,11 @@ const Carousel = (props) => {
   };
   {console.log("props",props)}
   return (
-    <section className="Carousel /ml-4">
+    <div className="Carousel /ml-4">
       <Slider {...settings} className="">
         {itemList.map(n=>{ return <MenuItem name={n}/>})}     
       </Slider>
-    </section>
+    </div>
   );
 };
 

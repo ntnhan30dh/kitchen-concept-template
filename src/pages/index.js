@@ -24,7 +24,8 @@ const IndexPage = () => {
   < StyleProvider> 
     {/* <Description/>  
     <Footer/>   */}
-    <Menu/>
+    {/* <Menu type={1}/> */}
+    <Menu type={2}/>
   </StyleProvider>
     </main>
   )
