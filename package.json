@@ -24,7 +24,9 @@
     "gatsby-transformer-sharp": "^4.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "sass": "^1.49.9"
+    "react-slick": "^0.28.1",
+    "sass": "^1.49.9",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
