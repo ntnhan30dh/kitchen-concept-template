@@ -13,6 +13,7 @@ import Footer from "../components/Footer"
 import Description from "../components/Description"
 import Menu from "../components/Menu"
 import IG from "../components/IG"
+import Platform from "../components/Platform"
 // markup
 const IndexPage = () => {
  
@@ -26,8 +27,9 @@ const IndexPage = () => {
     {/* <Description/>  
     <Footer/>   */}
     {/* <Menu type={1}/> */}
-    <Menu type={2}/>
+    {/* <Menu type={2}/> */}
     <IG/>
+    <Platform/>
   </StyleProvider>
     </main>
   )
