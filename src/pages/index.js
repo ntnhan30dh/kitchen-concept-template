@@ -12,6 +12,7 @@ import Header from "../components/header"
 import Footer from "../components/Footer"
 import Description from "../components/Description"
 import Menu from "../components/Menu"
+import IG from "../components/IG"
 // markup
 const IndexPage = () => {
  
@@ -26,6 +27,7 @@ const IndexPage = () => {
     <Footer/>   */}
     {/* <Menu type={1}/> */}
     <Menu type={2}/>
+    <IG/>
   </StyleProvider>
     </main>
   )
