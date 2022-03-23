@@ -50,12 +50,14 @@ const Menu2 = (props) => {
     ],
   };
   const itemList = menuType[props.type];
+  const left = props.margin === "left"? true: false
+  const right = props.margin === "right"? true: false
   return (
-    <div className="lg:flex mr-4 md:mr-10 xl:mr-24 lg:mb-10">
-        <div className="w-full  lg:pr-8 lg:w-2/3 ">
+    <div className="lg:flex mr-4 md:mr-10 xl:mr-24 lg:mb-10 ">
+        <div className={` relative  lg:pr-8 lg:w-2/3 ${left?"ml-11":""} ${right?"mr-11":""}`}>
         <img src={pic} alt="description" className="w-full" />
         </div>
-        <div className="text text-center lg:w-1/3 border-2 lg:flex flex-col justify-center">
+        <div className={`bg-white relative z-20 text text-center lg:w-1/3 border-2 lg:flex flex-col justify-center ${left?"-mt-5 mr-11":""} ${right?"-mt-5 ml-11":""}`}>
         <h3 className={`font-bold text-xl md:text-24px my-5`}>Title</h3>
       <ul className="">
         {itemList.map((n) => {

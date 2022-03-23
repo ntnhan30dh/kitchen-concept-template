@@ -27,6 +27,8 @@ const IndexPage = () => {
     <Description/>  
     <Menu type={1}/>
     <Menu type={2}/>
+    <Menu type={2} margin="left"/>
+    <Menu type={2} margin="right"/>
     <IG/>
     <Platform/>
     <Footer/>  

@@ -45,7 +45,7 @@ const Menu = (props) => {
   };
   const categoryList = ["category1", "category2", "category3", "category4"];
   return (
-    <section className={`menu  xl:mt-14 ml-4 md:ml-10 xl:ml-24 ${style.my}`}>
+    <section className={`menu  xl:mt-14 ml-4 md:ml-10 xl:ml-24 ${style.my} ${props.margin?"md:hidden":""}`}>
       <div className="top  xl:flex justify-between items-end mr-4 md:mr-10 xl:mr-24 xl:mb-10">
         <div className={`text `}>
           <h2 className={`${style.text.h2} mb-2 `}>Menu</h2>
@@ -61,7 +61,7 @@ const Menu = (props) => {
       </ul>
       </div>
      {props.type===1 && <Carousel type={menuType} />}
-     {props.type===2 && <Menu2 type={menuType}  />}
+     {props.type===2 && <Menu2 type={menuType} margin={props.margin}  />}
     </section>
   );
 };
