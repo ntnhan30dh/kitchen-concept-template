@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-import MenuItem from "./MenuItem";
+import MenuItem from "./menuItem";
 
 const Carousel = (props) => {
 

@@ -2,7 +2,7 @@ import React from "react";
 import BackgroundImage from 'gatsby-background-image'
 
 import {useStyle} from './context/styleContext'
-import OrderNow from './OrderNow'
+import OrderNow from './orderNow'
 
 import pic from "../images/description.png";
 

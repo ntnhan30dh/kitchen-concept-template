@@ -3,7 +3,7 @@ import React from "react";
 import { useStyle } from "./context/styleContext";
 
 import pic from "../images/menuPic.png";
-import OrderNow from '../components/OrderNow'
+import OrderNow from './orderNow'
 
 const Menu2 = (props) => {
   const style = useStyle();

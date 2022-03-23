@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import logo from "../images/logo.png";
 
 import { useMenu, useMenuUpdate } from "./context/menuContext";
-import OrderNow from "./OrderNow";
+import OrderNow from "./orderNow";
 
 const Header2 = (props) => {
   const menuState = useMenu();

@@ -1,5 +1,5 @@
 import React from "react";
-import {useStyle} from '../components/context/styleContext'
+import {useStyle} from './context/styleContext'
 
 import logo from "../images/logo_footer.png";
 import logoMobile from "../images/logo_footer__mobile.png";

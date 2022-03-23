@@ -8,12 +8,12 @@ import "slick-carousel/slick/slick-theme.css"
 import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"
 
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import Description from "../components/Description"
-import Menu from "../components/Menu"
-import IG from "../components/IG"
-import Platform from "../components/Platform"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import Description from "../components/description"
+import Menu from "../components/menu"
+import IG from "../components/ig"
+import Platform from "../components/platform"
 // markup
 const IndexPage = () => {
  

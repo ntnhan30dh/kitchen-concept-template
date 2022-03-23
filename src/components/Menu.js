@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Carousel from "./Carousel";
-import Menu2 from "./Menu2";
+import Carousel from "./carousel";
+import Menu2 from "./menu2";
 import { useStyle } from "./context/styleContext";
 
 const Menu = (props) => {

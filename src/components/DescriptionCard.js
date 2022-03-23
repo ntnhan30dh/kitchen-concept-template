@@ -1,7 +1,7 @@
 import React from "react";
 
-import {useStyle} from '../components/context/styleContext'
-import OrderNow from '../components/OrderNow'
+import {useStyle} from './context/styleContext'
+import OrderNow from './orderNow'
 
 import pic from "../images/description.png";
 

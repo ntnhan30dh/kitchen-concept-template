@@ -1,8 +1,8 @@
 import React from "react";
 import { useStyle } from "./context/styleContext";
 
-import DescriptionCard from "./DescriptionCard";
-import DescriptionCard2 from "./DescriptionCard2";
+import DescriptionCard from "./descriptionCard";
+import DescriptionCard2 from "./descriptionCard2";
 
 const Description = () =>{
     const style = useStyle();

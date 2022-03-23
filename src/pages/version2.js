@@ -6,7 +6,7 @@ import "../styles/index.scss"
 import {MenuProvider} from "../components/context/menuContext"
 //import {StyleProvider} from "../components/context/styleContext"
 
-import Header2 from "../components/Header2"
+import Header2 from "../components/header2"
 // markup
 const Version2 = () => {
  
