@@ -4,9 +4,9 @@ import * as React from "react"
 import "../styles/index.scss"
 
 import {MenuProvider} from "../components/context/menuContext"
-import {StyleProvider} from "../components/context/styleContext"
+//import {StyleProvider} from "../components/context/styleContext"
 
-import Header2 from "../components/header2"
+import Header2 from "../components/Header2"
 // markup
 const Version2 = () => {
  
@@ -14,7 +14,7 @@ const Version2 = () => {
     <main >
       <title>Kitchen Concept</title>
       < MenuProvider> 
-    <Header2  /> 
+    <Header2 /> 
   </MenuProvider>
     </main>
   )
