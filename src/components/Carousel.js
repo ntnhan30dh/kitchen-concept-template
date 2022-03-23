@@ -19,8 +19,8 @@ const Carousel = (props) => {
     slidesToShow: 3.1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    //cssEase: "linear",
+    autoplaySpeed: 5000,
+    cssEase: "linear",
     centerMode: true,
     arrows:false,
     responsive: [
@@ -56,7 +56,7 @@ const Carousel = (props) => {
   };
   {console.log("props",props)}
   return (
-    <div className="Carousel /ml-4">
+    <div className="Carousel ">
       <Slider {...settings} className="">
         {itemList.map(n=>{ return <MenuItem name={n}/>})}     
       </Slider>

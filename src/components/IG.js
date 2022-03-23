@@ -73,16 +73,16 @@ const IG = () =>{
 
   return (
       <section className="ig " id="ig">
-      <div className=" mx-4 md:mx-10 xl:mx-24 my-8 md:my-10 max-w-lg">
+      <div className={` ${style.mx} ${style.mt_md} ${style.mb_sm} max-w-lg`}>
         <a
           href={IGlinks}
           target="_blank"
           className="text-black "
         >
           <h2
-            className={`${style.text.h2} `}
+            className={`${style.text.h2} mb-2 md:mb-3`}
           >
-            Title
+            Follow us
           </h2>
         </a>
         <p className={`${style.text.body1} `}> Ningen pohuvis fäsade attefallshus, krorar.

@@ -9,11 +9,11 @@ const DescriptionCard = (props) => {
     const style = useStyle()
   return (
     <article className={`descriptionCard ${props.article} mb-12`}>
-      <div className={`  my-10`}>
+      <div className={`  mt-10 mb-8`}>
         <img src={pic} alt="description" className="w-full " />
       </div>
       <div className={`text max-w-500px ${props.text}`}>
-      <h2 className={`${style.text.h2}`}>Title</h2>
+      <h2 className={`${style.text.h2}`}>Description</h2>
       <p className={`${style.text.body1} mt-2 md:mt-3`}>
       Ningen pohuvis fäsade attefallshus, krorar.
       Lörem ipsum prektigt ode, bisigon helänade.  

@@ -9,7 +9,7 @@ const Menu = (props) => {
 
   const style = useStyle();
 
-  const fillColor = "blue";
+ // const fillColor = "blue";
 
   const menuTypeItem = (type) => {
     return (
@@ -45,16 +45,16 @@ const Menu = (props) => {
   };
   const categoryList = ["category1", "category2", "category3", "category4"];
   return (
-    <section className="menu mt-10 ml-4 md:ml-10 xl:ml-24">
-      <div className="top /mx-4 xl:flex justify-between items-end mr-4 md:mr-10 xl:mr-24 xl:mb-10">
-        <div className="text ">
-          <h2 className={`${style.text.h2} mb-2 `}>Title</h2>
+    <section className={`menu  xl:mt-14 ml-4 md:ml-10 xl:ml-24 ${style.my}`}>
+      <div className="top  xl:flex justify-between items-end mr-4 md:mr-10 xl:mr-24 xl:mb-10">
+        <div className={`text `}>
+          <h2 className={`${style.text.h2} mb-2 `}>Menu</h2>
           <p className={`${style.text.body1} max-w-2xl `}>
             Ningen pohuvis fäsade attefallshus, krorar. Lörem ipsum prektigt
             ode, bisigon helänade.
           </p>
         </div>
-      <ul className="flex justify-between flex-wrap my-10 xl:my-0">
+      <ul className="flex justify-between flex-wrap my-8 xl:my-0">
         {categoryList.map((c) => {
           return <li> {menuTypeItem(c)}</li>;
         })}

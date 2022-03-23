@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css"
 import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"
 
-import Header from "../components/header"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Description from "../components/Description"
 import Menu from "../components/Menu"
@@ -24,12 +24,12 @@ const IndexPage = () => {
     <Header  /> 
   </MenuProvider>
   < StyleProvider> 
-    {/* <Description/>  
-    <Footer/>   */}
-    {/* <Menu type={1}/> */}
-    {/* <Menu type={2}/> */}
+    <Description/>  
+    <Menu type={1}/>
+    <Menu type={2}/>
     <IG/>
     <Platform/>
+    <Footer/>  
   </StyleProvider>
     </main>
   )

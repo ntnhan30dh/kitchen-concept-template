@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 
 import logo from "../images/logo.png";
 
-import { useMenu, useMenuUpdate } from "../components/context/menuContext";
-import OrderNow from '../components/OrderNow'
+import { useMenu, useMenuUpdate } from "./context/menuContext";
+import OrderNow from './OrderNow'
 
 const Header = (props) => {
   const menuState = useMenu();
@@ -21,11 +21,11 @@ const Header = (props) => {
  
 
   return (
-    <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink md:px-1/20 ">
-      <nav className="nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 md:my-4">
+    <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white /py-1">
+      <nav className="nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 my-4">
         <div className="ml-4 md:ml-0 left w-28 md:w-32 lg:w-44">
-          <Link to="/" className=" ">
-            <img src={logo} alt="logo" />
+          <Link to="/" className=" w-full ">
+            <img src={logo} alt="logo" className=" w-full "/>
           </Link>
         </div>
         {/* desktop */}
@@ -71,7 +71,7 @@ const Header = (props) => {
         <div
           className={`mobile header_rightDiv  hidden  justify-center  h-screen w-full absolute top-0 right-0 bg-white ${menuActive}`}
         >
-          <div className=" flex flex-col md:hidden mt-28">
+          <div className=" flex flex-col md:hidden mt-20">
             <Link
               onClick={toggleMenu}
               to="/#what"

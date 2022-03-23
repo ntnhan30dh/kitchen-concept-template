@@ -13,16 +13,16 @@ const Footer = () => {
   const style = useStyle()
   const soMe = (img) => {
     return (
-      <Link to="/" className="w-12 mr-5">
+      <Link to="/" className="w-12 mr-5 md:mr-auto md:ml-5 ">
         <img src={img} alt="logo" className="w-full " />
       </Link>
     );
   };
 
   const soMeList = [fb,ig,twitter,snapchat]
-  const h4= "mt-8 mb-3"
+  const h4= ` ${style.mt_sm}  mb-3`
   return (
-    <section className="footer  mx-4 md:mx-28 md:my-14">
+    <section className={`footer ${style.mx}  ${style.my} `}>
       <div className="top w-full md:flex justify-between">
         <div className="w-full md:w-28 ">
           <Link to="/" className="w-full ">
@@ -30,7 +30,7 @@ const Footer = () => {
             <img
               src={logoMobile}
               alt="logo"
-              className="w-full md:hidden /max-w-xs /mx-auto"
+              className="w-full md:hidden "
             />
           </Link>
         </div>
@@ -39,7 +39,7 @@ const Footer = () => {
             {" "}
             Follow us on
           </h4>
-          <div className="some flex">
+          <div className="some flex /md:justify-end">
           {soMeList.map(s=>soMe(s))}
           </div>
         </div>
@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
 
         </div>
-        <p className={` ${style.text.action2} my-4 md:my-14`}>
+        <p className={` ${style.text.action2} ${style.mt_md} `}>
         © 2022 All Rights Reserved.
           </p>
     </section>
