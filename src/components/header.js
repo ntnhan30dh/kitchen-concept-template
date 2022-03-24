@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
 
 import logo from "../images/logo.png";
+import logo_sm from "../images/logo_sm.png";
 
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import OrderNow from './orderNow'
@@ -9,6 +10,15 @@ import OrderNow from './orderNow'
 const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
+
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
+
+  const logoSrc = scroll?logo_sm:logo
 
   let menuActive = menuState ? "is-inactive" : "";
   let change = menuState ? "change" : "";
@@ -21,11 +31,11 @@ const Header = (props) => {
  
 
   return (
-    <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white /py-1">
-      <nav className="nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 my-4">
+    <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white ">
+      <nav className={`nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 py-2 `}>
         <div className="ml-4 md:ml-0 left w-28 md:w-32 lg:w-44">
           <Link to="/" className=" w-full ">
-            <img src={logo} alt="logo" className=" w-full "/>
+            <img src={logoSrc} alt="logo" className=" w-full "/>
           </Link>
         </div>
         {/* desktop */}
