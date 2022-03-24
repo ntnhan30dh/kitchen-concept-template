@@ -1,4 +1,5 @@
 import React from "react";
+//import Plx from 'react-plx';
 
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
@@ -7,9 +8,26 @@ import pic from "../images/description.png";
 
 const DescriptionCard = (props) => {
     const style = useStyle()
+
+    const parallaxData = [
+      {
+        start: 0,
+        end: 500,
+        properties: [
+          {
+            startValue: 1,
+            endValue: 2,
+            property: 'scale',
+          },
+        ],
+      },
+    ];
+    
   return (
     <article className={`descriptionCard ${props.article} mb-12`}>
-      <div className={`  mt-10 mb-8`}>
+    <div
+        parallaxData={ parallaxData }
+       className={`  mt-10 mb-8`}>
         <img src={pic} alt="description" className="w-full " />
       </div>
       <div className={`text max-w-500px ${props.text}`}>
