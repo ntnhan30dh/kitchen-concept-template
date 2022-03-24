@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
+import { useIntl } from "gatsby-plugin-intl"
 
 import logo from "../images/logo.png";
 import logo_sm from "../images/logo_sm.png";
@@ -10,6 +11,9 @@ import OrderNow from './orderNow'
 const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
+
+  const intl = useIntl()
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -34,7 +38,7 @@ const Header = (props) => {
     <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white ">
       <nav className={`nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 py-2 `}>
         <div className="ml-4 md:ml-0 left w-28 md:w-32 lg:w-44">
-          <Link to="/" className=" w-full ">
+          <Link to={`${locale}/`} className=" w-full ">
             <img src={logoSrc} alt="logo" className=" w-full "/>
           </Link>
         </div>
@@ -46,7 +50,8 @@ const Header = (props) => {
         >
        
             <Link to="/" href="" className={link1}>
-              <span className={span1}>Anchor</span>
+              <span className={span1}>{intl.formatMessage({ id: "Our Story" })}</span>
+              
             </Link>
          
        
@@ -70,9 +75,9 @@ const Header = (props) => {
             </Link>
 
 
-            <Link to="/" href="" className={link1}>
-              <span className={span1}><span className="font-bold"> Eng </span>  | Esp</span>
-            </Link>
+            <div to="/" href="" className={link1}>
+              <span className={span1}><span className={intl.locale==="en"?"font-bold":""}> <Link to="/"> Eng </Link>  </span>  | <Link className={intl.locale==="es"?"font-bold":""} to="/es"> Esp </Link> </span>
+            </div>
             {/* <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-6 tracking-wider"> order now </span> </button> */}
             <OrderNow padding="py-4 px-6"/>
         </div>
