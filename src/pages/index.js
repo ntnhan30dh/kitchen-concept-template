@@ -4,6 +4,7 @@ import * as React from "react"
 import "../styles/index.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import 'semantic-ui-css/semantic.min.css'
 
 import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"

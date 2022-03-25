@@ -26,11 +26,11 @@ const Header = (props) => {
 
   let menuActive = menuState ? "is-inactive" : "";
   let change = menuState ? "change" : "";
-  const link = " text-xl  w-full   text-center font-normal mb-14 ";
+  const link = " text-xl   w-full   text-center font-normal mb-14 ";
   const link1 =
-    "  font-normal	  h-full  py-4";
-  const span = "my-auto  text-black  hover:text-lipstick ";
-  const span1 = "my-auto     h-full  ";
+    "  font-normal 	  h-full  py-4";
+  const span = "my-auto    hover:text-lipstick ";
+  const span1 = "my-auto  	   h-full  ";
 
  
 
@@ -75,8 +75,8 @@ const Header = (props) => {
             </Link>
 
 
-            <div to="/" href="" className={link1}>
-              <span className={span1}><span className={intl.locale==="en"?"font-bold":""}> <Link to="/"> Eng </Link>  </span>  | <Link className={intl.locale==="es"?"font-bold":""} to="/es"> Esp </Link> </span>
+            <div to="/" href="" className={link1} >
+       <Link to="/" className={`  ${intl.locale==="en"?"font-bold":""} `}> Eng </Link>  | <Link className={`  ${intl.locale==="es"?"font-bold":""} `} to="/es"> Esp </Link>   
             </div>
             {/* <button >  <span className="uppercase bg-blue text-white font-bold py-4 px-6 tracking-wider"> order now </span> </button> */}
             <OrderNow padding="py-4 px-6"/>
