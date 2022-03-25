@@ -23,7 +23,7 @@ const Footer = () => {
   const h4= ` ${style.mt_sm}  mb-3`
   return (
     <section className={`footer ${style.mx}  ${style.my} `}>
-      <div className="top w-full md:flex justify-between">
+      <div className="top w-full md:flex justify-between md:mb-10 md:mt-14">
         <div className="w-full md:w-28 ">
           <Link to="/" className="w-full ">
             <img src={logo} alt="logo" className="w-full hidden md:block" />
@@ -34,7 +34,7 @@ const Footer = () => {
             />
           </Link>
         </div>
-        <div className="follow md:flex items-center">
+        <div className={`my-8 follow md:flex items-center md:my-auto`}>
           <h4 className={`${style.text.h4} my-6 md:mr-10`}>
             {" "}
             Follow us on
