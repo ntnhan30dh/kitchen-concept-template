@@ -2,8 +2,8 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-import 'semantic-ui-css/semantic.min.css'
 import "../styles/index.scss"
+import 'semantic-ui-css/semantic.min.css'
 
 import {MenuProvider} from "../components/context/menuContext"
 import {StyleProvider} from "../components/context/styleContext"
