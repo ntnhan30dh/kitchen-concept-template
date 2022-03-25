@@ -7,11 +7,13 @@ import logo from "../images/logo.png";
 import logo_sm from "../images/logo_sm.png";
 
 import { useMenu, useMenuUpdate } from "./context/menuContext";
+import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
 
 const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
+  const style = useStyle()
 
   const intl = useIntl()
   const locale = intl.locale !== "en" ? `/${intl.locale}` : ""
@@ -37,8 +39,8 @@ const Header = (props) => {
 
   return (
     <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white ">
-      <nav className={`nav md:flex justify-between items-center  flex-row md:mx-10 xl:mx-24 py-2 `}>
-        <div className="ml-4 md:ml-0 left w-28 md:w-32 lg:w-44">
+      <nav className={`nav md:flex justify-between items-center  flex-row ${style.mx}  py-2 `}>
+        <div className=" left w-28 md:w-32 lg:w-44">
           <Link to={`${locale}/`} className=" w-full ">
             <img src={logoSrc} alt="logo" className=" w-full "/>
           </Link>

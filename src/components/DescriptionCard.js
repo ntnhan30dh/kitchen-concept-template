@@ -1,5 +1,5 @@
 import React from "react";
-import Plx from 'react-plx';
+//import Plx from 'react-plx';
 
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'

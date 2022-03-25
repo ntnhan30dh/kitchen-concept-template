@@ -21,10 +21,10 @@ const IndexPage = () => {
   return (
     <main >
       <title>Kitchen Concept</title>
+  < StyleProvider> 
       < MenuProvider> 
     <Header  /> 
   </MenuProvider>
-  < StyleProvider> 
     <Description/>  
     <Menu type={1}/>
     <Menu type={2}/>
