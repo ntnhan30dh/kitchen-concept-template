@@ -7,7 +7,7 @@ import DescriptionCard2 from "./descriptionCard2";
 const Description = () =>{
     const style = useStyle();
     return (
-<section className="description mt-10 ">
+<section className="description mt-10 " id="story">
     <DescriptionCard article={`${style.mx} md:my-10 xl:my-24  md:flex flex-row-reverse items-center`} text=" md:mr-10 xl:mr-32"/>
     <DescriptionCard article={` ${style.mx}  mr-16  md:my-10  xl:my-24  md:flex  items-center`}  text=" md:ml-10 xl:ml-32"/>
     <DescriptionCard article={`${style.mx}  ml-16  md:my-10  xl:my-24 md:flex  items-center`}  text=" md:ml-10 xl:ml-32"/>

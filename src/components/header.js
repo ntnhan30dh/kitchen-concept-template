@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react"
 import { Link } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl"
+//import Scrollspy from 'react-scrollspy'
 
 import logo from "../images/logo.png";
 import logo_sm from "../images/logo_sm.png";
@@ -46,10 +47,11 @@ const Header = (props) => {
 
         <div
           className={` desktop hidden md:flex  justify-between w-3/4 h-full `}
-          currentClassName="opacity-100 border-t-4 border-white "
+          items={ ['story', 'behindTheBeans', 'howToOrder', 'news'] }
+          currentClassName="opacity-100 border-t-4 border-white text-blue bg-blue "
         >
        
-            <Link to="/" href="" className={link1}>
+            <Link to="/#story" href="story" className={link1}>
               <span className={span1}>{intl.formatMessage({ id: "Our Story" })}</span>
               
             </Link>
