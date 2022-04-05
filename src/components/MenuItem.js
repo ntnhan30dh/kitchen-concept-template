@@ -9,7 +9,7 @@ const MenuItem = (props) =>{
      const description = {
          "name": "Ningen pohuvis fäsade attefallshus, krorar. Lörem ipsum prektigt ode, bisigon helänade."     }
      return (
-         <article className="mr-4 md:mr-6 md:mr-8  border-2 ">
+         <article className="mr-4 /md:mr-6 /md:mr-8  border-2 ">
          <div className={` `}>
         <img src={pic} alt="menu item pic" className="" />
         <div className="text p-5 md:p-8 md:p-8 mb-12 md:mb-28">
