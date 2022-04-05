@@ -16,9 +16,11 @@ export default function Home() {
       <head>
       <title>Kitchen Concept</title>
       </head>
+      <StyleProvider>
       < MenuProvider> 
     <Header  /> 
   </MenuProvider>
+      </StyleProvider>
     <div className="legalInfo-div">
         <h1>Disclaimer</h1>
         <h2>Legal notice</h2>

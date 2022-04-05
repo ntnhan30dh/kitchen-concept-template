@@ -18,9 +18,11 @@ export default function Home() {
     <head>
       <title>Kitchen Concept</title>
       </head>
+      <StyleProvider>
       < MenuProvider> 
     <Header  /> 
   </MenuProvider>
+      </StyleProvider>
     <div className="legalInfo-div">
         <h1>Imprint</h1>
         <h2>Editorial Responsibility</h2>
