@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from "react"
-import { Link } from "gatsby";
+import { Link,graphql, useStaticQuery } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl"
+
 //import Scrollspy from 'react-scrollspy'
 
-import logo from "../images/logo.png";
-import logo_sm from "../images/logo_sm.png";
+//import logo from "../images/logo.png";
+//import logo_sm from "../images/logo_sm.png";
 
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import {useStyle} from './context/styleContext'
@@ -25,6 +26,43 @@ const Header = (props) => {
     });
   }, []);
 
+  const data = useStaticQuery(graphql`
+  {
+    allWpHeaderItem {
+      edges {
+        node {
+          title
+          headerItems {
+            id
+          }
+        }
+      }
+    }
+    allWpHeaderLogo {
+      edges {
+        node {
+          headerLogo {
+            logoBig {
+              localFile {
+                url
+              }
+            }
+            logoSmall {
+              localFile {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+`)
+
+  const items = data.allWpHeaderItem.edges
+  const logo = data.allWpHeaderLogo.edges[0].node.headerLogo.logoBig.localFile.url
+  const logo_sm = data.allWpHeaderLogo.edges[0].node.headerLogo.logoSmall.localFile.url
   const logoSrc = scroll?logo_sm:logo
 
   let menuActive = menuState ? "is-inactive" : "";
@@ -52,8 +90,18 @@ const Header = (props) => {
           items={ ['story', 'behindTheBeans', 'howToOrder', 'news'] }
           currentClassName="opacity-100 border-t-4 border-white text-blue bg-blue "
         >
+
+        {items.map(i=>{
+          return (
+            
+            <Link to={`/#${i.node.headerItems.id}`} href={i.node.headerItems.id} className={link1}>
+              <span className={span1}>{intl.formatMessage({ id: i.node.title })}</span>
+              
+            </Link>
+          )
+        })}
        
-            <Link to="/#story" href="story" className={link1}>
+            {/* <Link to="/#story" href="story" className={link1}>
               <span className={span1}>{intl.formatMessage({ id: "Our Story" })}</span>
               
             </Link>
@@ -76,7 +124,7 @@ const Header = (props) => {
 
             <Link to="/" href="" className={link1}>
               <span className={span1}>Anchor</span>
-            </Link>
+            </Link> */}
 
 
             <div to="/" href="" className={link1} >
