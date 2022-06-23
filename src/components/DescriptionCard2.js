@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundImage from 'gatsby-background-image'
+//import BackgroundImage from 'gatsby-background-image'
 
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'

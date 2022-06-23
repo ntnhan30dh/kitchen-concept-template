@@ -7,7 +7,7 @@ import ig3 from "../images/ig/ig3.png"
 
 import { useStyle } from "./context/styleContext";
 
-const IG = () =>{
+const Ig = () =>{
 
     const [insta, setInsta] = useState(undefined)
 
@@ -67,9 +67,9 @@ const IG = () =>{
       .then(data => {
         setInsta(data.data)
         // console.log("insta",insta)
-        console.log("data", data)
+       // console.log("data", data)
       })
-  }, [])
+  }, [url])
 
   return (
       <section className="ig " id="ig">
@@ -78,6 +78,7 @@ const IG = () =>{
           href={IGlinks}
           target="_blank"
           className="text-black "
+          rel="noreferrer"
         >
           <h2
             className={`${style.text.h2} mb-2 md:mb-3`}
@@ -91,6 +92,7 @@ Lörem ipsum prektigt ode, bisigon helänade. </p>
       <a
           href={IGlinks}
           target="_blank"
+          rel="noreferrer"
         >
       <Slider {...settings} className="">
         {insta
@@ -108,4 +110,4 @@ Lörem ipsum prektigt ode, bisigon helänade. </p>
   )
 }
 
-export default IG
+export default Ig

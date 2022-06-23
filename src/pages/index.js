@@ -1,5 +1,6 @@
 import * as React from "react"
 
+
 // styles
 import "../styles/index.scss"
 import "slick-carousel/slick/slick.css"
@@ -13,10 +14,10 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Description from "../components/description"
 import Menu from "../components/menu"
-import IG from "../components/ig"
+import Ig from "../components/ig"
 import Platform from "../components/platform"
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
  
   return (
     <main >
@@ -25,12 +26,13 @@ const IndexPage = () => {
       < MenuProvider> 
     <Header  /> 
   </MenuProvider>
+  {console.log("data",data)}
     <Description/>  
     <Menu type={1}/>
     <Menu type={2}/>
     <Menu type={2} margin="left"/>
     <Menu type={2} margin="right"/>
-    <IG/>
+    <Ig/>
     <Platform/>
     <Footer/>  
   </StyleProvider>
@@ -39,3 +41,24 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+// example dynamic query
+{/* 
+export const query = graphql`
+query MyQuery($locale: String!) {
+  allWpHeaderItem(filter: {language:{slug:{eq:$locale}}}) {
+    edges {
+      node {
+        headerItems {
+          id
+        }
+        title
+        language {
+          slug
+        }
+      }
+    }
+  }
+}
+
+`; */}
