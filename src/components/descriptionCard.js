@@ -5,7 +5,7 @@ import { useIntl } from "gatsby-plugin-intl";
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
 
-import pic from "../images/description.png";
+//import pic from "../images/description.png";
 
 const DescriptionCard = (props) => {
     const style = useStyle()
