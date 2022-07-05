@@ -3,7 +3,6 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
 
 //import Scrollspy from 'react-scrollspy'
-
 //import logo from "../images/logo.png";
 //import logo_sm from "../images/logo_sm.png";
 
