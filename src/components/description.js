@@ -1,6 +1,5 @@
 import React from "react";
 import { useStyle } from "./context/styleContext";
-import { graphql, useStaticQuery } from "gatsby"
 
 
 import DescriptionCard from "./descriptionCard";
@@ -25,22 +24,3 @@ const Description = ({data}) =>{
 }
 
 export default Description;
-
-export const query = graphql`
-query MyQuery1($locale: String!) {
-  allWpHeaderItem(filter: {language:{slug:{eq:$locale}}}) {
-    edges {
-      node {
-        headerItems {
-          id
-        }
-        title
-        language {
-          slug
-        }
-      }
-    }
-  }
-}
-
-`;
