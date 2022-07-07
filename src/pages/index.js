@@ -27,11 +27,11 @@ const IndexPage = ({data}) => {
     <Header  /> 
   </MenuProvider>
   {console.log("data",data)}
-    <Description/>  
+    {/* <Description/>   */}
     <Menu type={1}/>
     <Menu type={2}/>
-    <Menu type={2} margin="left"/>
-    <Menu type={2} margin="right"/>
+    {/* <Menu type={2} margin="left"/> */}
+    {/* <Menu type={2} margin="right"/> */}
     <Ig/>
     <Platform/>
     <Footer/>  
