@@ -1,11 +1,10 @@
 import React from "react";
 import {graphql, useStaticQuery } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl";
-
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
 
-import pic from "../images/description.png";
+//import pic from "../images/description.png";
 
 const DescriptionCard2 = (props) => {
     const style = useStyle()

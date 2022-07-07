@@ -1,16 +1,38 @@
 import React, { useState } from "react";
-
+import {graphql, useStaticQuery } from "gatsby";
+import { useIntl } from "gatsby-plugin-intl";
 import Carousel from "./carousel";
 import Menu2 from "./menu2";
 import { useStyle } from "./context/styleContext";
 
 const Menu = (props) => {
   let [menuType, setMenuType] = useState("category1");
-
-  const style = useStyle();
+ const style = useStyle();
 
  // const fillColor = "blue";
+ const intl = useIntl();
+ const data = useStaticQuery(graphql`
+ {
+  allWpPage (filter: {title:{eq:"Menu"}}) {
+    edges  {
+      node {
+        language {
+          slug
+        }
+        title
+        titleAndCopy {
+          title
+          copy
+        }
+      }
+    }
+  }
+ }
+`);
 
+const content = data.allWpPage.edges.filter((n) => {
+  return n.node.language.slug === intl.locale;
+})[0].node
   const menuTypeItem = (type) => {
     return (
       <button
@@ -48,10 +70,9 @@ const Menu = (props) => {
     <section className={`menu xl:mt-14 ml-4 md:ml-10 xl:ml-24 ${style.my} ${props.margin?"md:hidden":""}`}>
       <div className="top  xl:flex justify-between items-end mr-4 md:mr-10 xl:mr-24 xl:mb-10">
         <div className={`text `}>
-          <h2 className={`${style.text.h2} mb-2 `}>Menu</h2>
+          <h2 className={`${style.text.h2} mb-2 `}>{content.titleAndCopy.title}</h2>
           <p className={`${style.text.body1} max-w-2xl `}>
-            Ningen pohuvis fäsade attefallshus, krorar. Lörem ipsum prektigt
-            ode, bisigon helänade.
+           {content.titleAndCopy.copy}
           </p>
         </div>
       <ul className="flex justify-between flex-wrap my-8 xl:my-0">
