@@ -32,8 +32,8 @@ const IndexPage = ({data}) => {
     <Menu type={2}/> */}
     {/* <Menu type={2} margin="left"/> */}
     {/* <Menu type={2} margin="right"/> */}
-    <Ig/>
-    <Platform/>
+    {/* <Ig/>
+    <Platform/> */}
     <Footer/>  
   </StyleProvider>
     </main>

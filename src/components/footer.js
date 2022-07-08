@@ -15,6 +15,48 @@ const Footer = () => {
   const intl = useIntl();
   const data = useStaticQuery(graphql`
     {
+      allWpPage(filter: {title: {eq: "Footer"}}) {
+        edges {
+          node {
+            footer {
+              copy
+              copyright
+              logo {
+                localFile {
+                  url
+                }
+              }
+              logoMobile {
+                localFile {
+                  url
+                }
+              }
+            }
+            language {
+              slug
+            }
+          }
+        }
+      }
+
+      allWpSoMeItem {
+        edges {
+          node {
+            title
+            url {
+              url
+            }
+            featuredImage {
+              node {
+                localFile {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+
       allWpFooterItems {
         edges {
           node {
@@ -38,12 +80,18 @@ const Footer = () => {
   items.map((i) => {
     columnList.push(i.node.infoColumn.type);
   });
-
   columnList = [...new Set(columnList)];
-  const soMe = (img) => {
+
+  const content = data.allWpPage.edges
+  .filter((n) => {
+    return n.node.language.slug === intl.locale;
+  })[0].node
+
+
+  const soMe = (img,url,name) => {
     return (
-      <Link to="/" className="w-12 mr-5 md:mr-auto md:ml-5">
-        <img src={img} alt="logo" className="w-full " />
+      <Link to={url} target="_blank" className="w-12 mr-5 md:mr-auto md:ml-5" >
+        <img src={img} alt={name} className="w-full " />
       </Link>
     );
   };
@@ -56,14 +104,14 @@ const Footer = () => {
       <div className="top w-full md:flex justify-between md:mb-10 md:mt-14">
         <div className="w-full md:w-28 ">
           <Link to="/" className="w-full ">
-            <img src={logo} alt="logo" className="w-full hidden md:block" />
-            <img src={logoMobile} alt="logo" className="w-full md:hidden " />
+            <img src={content.footer.logo.localFile.url} alt="logo" className="w-full hidden md:block" />
+            <img src={content.footer.logoMobile.localFile.url} alt="logo" className="w-full md:hidden " />
           </Link>
         </div>
         <div className={`my-8 follow md:flex items-center md:my-auto`}>
-          <h4 className={`${style.text.h4} my-6 md:mr-10`}> Follow us on</h4>
+          <h4 className={`${style.text.h4} my-6 md:mr-10`}> {content.footer.copy}</h4>
           <div className="some flex /md:justify-end">
-            {soMeList.map((s) => soMe(s))}
+            {data.allWpSoMeItem.edges.map((s) => soMe(s.node.featuredImage.node.localFile.url, s.node.url.url, s.node.title))}
           </div>
         </div>
       </div>
@@ -82,93 +130,13 @@ const Footer = () => {
                 .map((i) => {
                   return <li>{i.node.title}</li>;
                 })}
-                {/* <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li> */}
               </ul>
             </div>
           );
         })}
-        {/* <div>
-            <h4 className={`${style.text.h4} ${h4}`}>Info column</h4>
-            <ul>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-            </ul>
-          </div> */}
-        {/* <div>
-          <h4 className={`${style.text.h4} ${h4}`}>Info column</h4>
-            <ul>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-            </ul>
-          </div>
-          <div>
-          <h4 className={`${style.text.h4} ${h4}`}>Info column</h4>
-            <ul>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-            </ul>
-          </div>
-          <div>
-          <h4 className={`${style.text.h4} ${h4}`}>Info column</h4>
-            <ul>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-              <li>
-              Info item
-              </li>
-            </ul>
-          </div> */}
       </div>
       <p className={` ${style.text.action2} ${style.mt_md} `}>
-        © 2022 All Rights Reserved.
+       {content.footer.copyright}
       </p>
     </section>
   );
