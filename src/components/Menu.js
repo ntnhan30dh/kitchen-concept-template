@@ -24,6 +24,9 @@ const Menu = (props) => {
           title
           copy
         }
+        isslider {
+          isSlider
+        }
       }
     }
   }
@@ -33,6 +36,7 @@ const Menu = (props) => {
 const content = data.allWpPage.edges.filter((n) => {
   return n.node.language.slug === intl.locale;
 })[0].node
+const isslider = content.isslider.isSlider
   const menuTypeItem = (type) => {
     return (
       <button
@@ -81,8 +85,8 @@ const content = data.allWpPage.edges.filter((n) => {
         })}
       </ul>
       </div>
-     {props.type===1 && <Carousel type={menuType} />}
-     {props.type===2 && <Menu2 type={menuType} margin={props.margin}  />}
+     {isslider? <Carousel type={menuType}/>:<Menu2 type={menuType} margin={props.margin}  />}
+     {/* {!isslider && <Menu2 type={menuType} margin={props.margin}  />} */}
     </section>
   );
 };
