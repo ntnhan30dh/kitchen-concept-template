@@ -9,7 +9,7 @@ import "semantic-ui-css/semantic.min.css";
 import { MenuProvider } from "../components/context/menuContext";
 import { StyleProvider } from "../components/context/styleContext";
 
-//import Header from "../components/header";
+import Header from "../components/header";
 import Footer from "../components/footer";
 import Description from "../components/description";
 import Menu from "../components/menu";
@@ -22,16 +22,16 @@ const IndexPage = () => {
       <title>Kitchen Concept</title>
       <StyleProvider>
         <MenuProvider>
-          {/* <Header /> */}
+          <Header />
         </MenuProvider>
         <Description />
-        {/* <Menu type={1} /> */}
+        <Menu type={1} />
         {/* <Menu type={2} /> */}
         <Menu type={2} margin="left" />
         <Menu type={2} margin="right" />
-        {/* <Ig /> */}
-        {/* <Platform /> */}
-        {/* <Footer /> */}
+        <Ig />
+        <Platform />
+        <Footer />
       </StyleProvider>
     </main>
   );
