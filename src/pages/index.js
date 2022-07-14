@@ -25,13 +25,13 @@ const IndexPage = () => {
           {/* <Header /> */}
         </MenuProvider>
         <Description />
-        <Menu type={1} />
+        {/* <Menu type={1} /> */}
         {/* <Menu type={2} /> */}
         <Menu type={2} margin="left" />
         <Menu type={2} margin="right" />
-        <Ig />
-        <Platform />
-        <Footer />
+        {/* <Ig /> */}
+        {/* <Platform /> */}
+        {/* <Footer /> */}
       </StyleProvider>
     </main>
   );
