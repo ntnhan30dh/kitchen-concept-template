@@ -42,6 +42,7 @@ module.exports = {
         `https://dhkitchenco.wpengine.com/graphql`,
     },
   },
+  'gatsby-plugin-netlify'
 
 ]
 };
