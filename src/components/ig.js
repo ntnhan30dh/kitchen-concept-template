@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import {graphql, useStaticQuery } from "gatsby";
 import Slider from "react-slick"
+import { useIntl } from "gatsby-plugin-react-intl"
 
 
 import { useStyle } from "./context/styleContext";
@@ -8,8 +9,8 @@ import { useStyle } from "./context/styleContext";
 const Ig = (props) =>{
   const [insta, setInsta] = useState(undefined)
   const style = useStyle();
-  const intl = props.intl
-    const data = useStaticQuery(graphql`
+  const intl = useIntl();
+  const data = useStaticQuery(graphql`
     {
       allWpPage(filter: {title: {eq: "Follow us"}}) {
         edges {
