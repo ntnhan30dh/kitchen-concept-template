@@ -3,13 +3,13 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import { useStyle } from "./context/styleContext";
 import OrderNow from "./orderNow";
-
+import { useIntl } from "gatsby-plugin-react-intl"
 const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
   const style = useStyle();
-  const intl = props.intl
-  const locale = props.locale
+  const intl = useIntl()
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -76,6 +76,7 @@ const Header = (props) => {
 
   return (
     <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white ">
+      <h1>{`Current locale: ${intl.locale}`}</h1>
       <nav
         className={`nav md:flex justify-between items-center  flex-row ${style.mx}  py-2 `}
       >

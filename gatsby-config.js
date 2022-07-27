@@ -26,6 +26,19 @@ module.exports = {
     },
   },
   {
+    resolve: `gatsby-plugin-react-intl`,
+    options: {
+      // Directory with the strings JSON
+      path: `${__dirname}/src/intl`,
+      // Supported languages
+      languages: [`es`, `en`],
+      // Default site language
+      defaultLanguage: `en`,
+      // Redirects to `/pt` in the route `/`
+      redirect: false,
+    },
+  },
+  {
     /**
      * First up is the WordPress source plugin that connects Gatsby
      * to your WordPress site.
