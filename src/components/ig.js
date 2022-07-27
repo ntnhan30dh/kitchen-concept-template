@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react"
 import {graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
 import Slider from "react-slick"
-import ig1 from "../images/ig/ig1.png"
-import ig2 from "../images/ig/ig2.png"
-import ig3 from "../images/ig/ig3.png"
+
 
 import { useStyle } from "./context/styleContext";
 
-const Ig = () =>{
+const Ig = (props) =>{
   const [insta, setInsta] = useState(undefined)
   const style = useStyle();
-  const intl = useIntl();
+  const intl = props.intl
     const data = useStaticQuery(graphql`
     {
       allWpPage(filter: {title: {eq: "Follow us"}}) {

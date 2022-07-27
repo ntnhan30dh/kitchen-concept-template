@@ -1,7 +1,5 @@
 import React from "react";
-
 import { useStyle } from "./context/styleContext";
-import pic from "../images/menuPic.png";
 
 
 const MenuItem = (props) =>{
