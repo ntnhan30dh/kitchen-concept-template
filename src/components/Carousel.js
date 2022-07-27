@@ -2,9 +2,11 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Slider from "react-slick";
 import MenuItem from "./menuItem";
+import { useIntl } from "gatsby-plugin-react-intl"
+
 
 const Carousel = (props) => {
-  const intl = props.intl
+  const intl = useIntl();
   const data = useStaticQuery(graphql`
     {
       allWpMenuCard {

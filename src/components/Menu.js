@@ -3,13 +3,16 @@ import {graphql, useStaticQuery } from "gatsby";
 import Carousel from "./carousel";
 import Menu2 from "./menu2";
 import { useStyle } from "./context/styleContext";
+import { useIntl } from "gatsby-plugin-react-intl"
+
 
 const Menu = (props) => {
   let [menuType, setMenuType] = useState("category1");
  const style = useStyle();
 
  // const fillColor = "blue";
- const intl = props.intl
+ const intl = useIntl();
+
  const data = useStaticQuery(graphql`
  {
   allWpPage (filter: {title:{eq:"Menu"}}) {
@@ -84,7 +87,7 @@ const isslider = content.isslider.isSlider
         })}
       </ul>
       </div>
-     {isslider? <Carousel type={menuType} intl={intl}/>:<Menu2 type={menuType} margin={props.margin} intl={intl}  />}
+     {isslider? <Carousel type={menuType} />:<Menu2 type={menuType} margin={props.margin}   />}
      {/* {!isslider && <Menu2 type={menuType} margin={props.margin}  />} */}
     </section>
   );

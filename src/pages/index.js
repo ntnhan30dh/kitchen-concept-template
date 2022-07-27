@@ -16,24 +16,21 @@ import Menu from "../components/menu";
 import Ig from "../components/ig";
 import Platform from "../components/platform";
 
-import { useIntl } from "gatsby-plugin-react-intl"
 // markup
 const IndexPage = () => {
-  const intl = useIntl();
-  const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
   return (
     <main>
       <title>Kitchen Concept</title>
       <StyleProvider>
         <MenuProvider>
-          <Header intl={intl} locale={locale}/>
+          <Header />
         </MenuProvider>
-        <Description intl={intl} locale={locale}/>
-        {/* <Menu type={1} intl={intl} /> */}
+        <Description/>
+        <Menu type={1} />
         {/* <Menu type={2} /> */}
         {/* <Menu type={2} intl={intl} margin="left" />
         <Menu type={2} intl={intl} margin="right" /> */}
-        <Ig intl={intl} />
+        <Ig  />
         {/* <Platform intl={intl} /> */}
         {/* <Footer /> */}
       </StyleProvider>
