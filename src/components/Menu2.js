@@ -1,13 +1,11 @@
 import React from "react";
 import {graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
 import { useStyle } from "./context/styleContext";
-import pic from "../images/menuPic.png";
 import OrderNow from './orderNow'
 
 const Menu2 = (props) => {
   const style = useStyle();
-  const intl = useIntl();
+  const intl = props.intl
     const data = useStaticQuery(graphql`
     {
       allWpPage(filter: {title: {eq: "Menu"}}) {
