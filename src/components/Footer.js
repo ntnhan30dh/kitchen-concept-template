@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
+import { useIntl } from "gatsby-plugin-react-intl";
 import { useStyle } from "./context/styleContext";
 import logo from "../images/logo_footer.png";
 import logoMobile from "../images/logo_footer__mobile.png";
