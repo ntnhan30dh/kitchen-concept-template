@@ -12,8 +12,8 @@ const Header = (props) => {
 
   // const intl = useIntl();
   // const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
-  const intl = {locale:"en"}
-  const locale = "en"
+  const intl = props.intl
+  const locale = props.locale
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {

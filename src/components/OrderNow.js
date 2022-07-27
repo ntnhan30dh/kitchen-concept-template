@@ -2,49 +2,11 @@ import React, { useState} from "react";
 import { Modal } from "semantic-ui-react"
 import CountryList from "./countrylist"
 import { useIntl } from "gatsby-plugin-intl"
-import {  graphql, useStaticQuery } from "gatsby";
-
 
 
 const OrderNow = (props) =>{
      const [open, setOpen] = useState(false)
-     const data = useStaticQuery(graphql`
-    {
-      allWpMenu {
-        edges {
-          node {
-            menuItems {
-              nodes {
-                title
-                label
-              }
-            }
-            name
-          }
-        }
-      }
-      allWpHeaderLogo {
-        edges {
-          node {
-            headerLogo {
-              logoBig {
-                localFile {
-                  url
-                }
-              }
-              logoSmall {
-                localFile {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const intl = useIntl();
+     const intl = useIntl();
 
 return (
          <Modal

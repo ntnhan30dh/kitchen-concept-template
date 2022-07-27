@@ -15,14 +15,18 @@ import Description from "../components/description";
 import Menu from "../components/menu";
 import Ig from "../components/ig";
 import Platform from "../components/platform";
+
+import { useIntl } from "gatsby-plugin-intl";
 // markup
 const IndexPage = () => {
+  const intl = useIntl();
+  const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
   return (
     <main>
       <title>Kitchen Concept</title>
       <StyleProvider>
         <MenuProvider>
-          <Header />
+          <Header intl={intl} locale={locale}/>
         </MenuProvider>
         {/* <Description /> */}
         {/* <Menu type={1} /> */}
