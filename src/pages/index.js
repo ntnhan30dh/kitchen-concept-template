@@ -16,7 +16,7 @@ import Menu from "../components/menu";
 import Ig from "../components/ig";
 import Platform from "../components/platform";
 
-import { useIntl } from "gatsby-plugin-intl";
+import { useIntl } from "gatsby-plugin-react-intl"
 // markup
 const IndexPage = () => {
   const intl = useIntl();
@@ -28,7 +28,7 @@ const IndexPage = () => {
         <MenuProvider>
           <Header intl={intl} locale={locale}/>
         </MenuProvider>
-        {/* <Description intl={intl}/> */}
+        <Description intl={intl}/>
         {/* <Menu type={1} intl={intl} /> */}
         {/* <Menu type={2} /> */}
         {/* <Menu type={2} intl={intl} margin="left" />

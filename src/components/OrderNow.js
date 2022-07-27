@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { Modal } from "semantic-ui-react"
 import CountryList from "./countrylist"
-import { useIntl } from "gatsby-plugin-intl"
+import { useIntl } from "gatsby-plugin-react-intl"
 
 
 const OrderNow = (props) =>{
