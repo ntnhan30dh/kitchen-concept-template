@@ -1,13 +1,12 @@
 import React from "react";
 import { useStyle } from "./context/styleContext";
 import { graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
 import DescriptionCard from "./descriptionCard";
 import DescriptionCard2 from "./descriptionCard2";
 
-const Description = () => {
+const Description = (props) => {
   const style = useStyle();
-  const intl = useIntl();
+  const intl = props.intl
   const data = useStaticQuery(graphql`
     {
       allWpPage(filter: { title: { eq: "Description" } }) {
@@ -71,11 +70,13 @@ const Description = () => {
       <DescriptionCard
         article={`${style.mx} ${layout1.article}`}
         text={layout1.text}
+        intl={intl}
       />
       {/* <DescriptionCard article={`${style.mx}  mr-16  md:my-10  xl:my-24 md:flex  items-center`}  text="md:ml-10 xl:ml-32"/> */}
       <DescriptionCard2
         article={layout2.article}
         text={layout2.text}
+        intl={intl}
       />
       {/* <DescriptionCard2 article="md:p-10 xl:p-24"  text="text-center pt-10 mx-auto"/>
     <DescriptionCard2 article="md:p-10 xl:p-24  md:flex  items-center justify-end"  text="pt-10 md:max-w-1/2 md:w-1/2"/> */}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-//import { useIntl } from "gatsby-plugin-intl";
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import { useStyle } from "./context/styleContext";
 import OrderNow from "./orderNow";
@@ -9,9 +8,6 @@ const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
   const style = useStyle();
-
-  // const intl = useIntl();
-  // const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
   const intl = props.intl
   const locale = props.locale
 

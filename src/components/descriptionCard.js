@@ -1,7 +1,5 @@
 import React from "react";
-//import Plx from 'react-plx';
 import {graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
 
@@ -9,7 +7,7 @@ import OrderNow from './orderNow'
 
 const DescriptionCard = (props) => {
     const style = useStyle()
-    const intl = useIntl();
+    const intl = props.intl
     const data = useStaticQuery(graphql`
     {
       allWpPage (filter: {title:{eq:"Description"}}) {
