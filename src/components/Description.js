@@ -1,13 +1,13 @@
 import React from "react";
 import { useStyle } from "./context/styleContext";
 import { graphql, useStaticQuery } from "gatsby";
+import { useIntl } from "gatsby-plugin-react-intl"
 import DescriptionCard from "./descriptionCard";
 import DescriptionCard2 from "./descriptionCard2";
 
 const Description = (props) => {
   const style = useStyle();
-  const intl = props.intl
-  const locale = props.locale
+  const intl = useIntl();
   const data = useStaticQuery(graphql`
     {
       allWpPage(filter: { title: { eq: "Description" } }) {
