@@ -1,6 +1,6 @@
 import React from "react"
 //import Header from "../components/header"
-import Footer from "../components/footer"
+//import Footer from "../components/footer"
 
 import "../styles/index.scss"
 import 'semantic-ui-css/semantic.min.css'
@@ -266,7 +266,7 @@ export default function Home() {
         </p>
       </div>
       < StyleProvider> 
-    <Footer/>  
+    {/* <Footer/>   */}
   </StyleProvider>
     </div>
   )
