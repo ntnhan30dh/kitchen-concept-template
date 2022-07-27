@@ -8,6 +8,7 @@ import OrderNow from './orderNow'
 const DescriptionCard = (props) => {
     const style = useStyle()
     const intl = props.intl
+    const locale = props.locale
     const data = useStaticQuery(graphql`
     {
       allWpPage (filter: {title:{eq:"Description"}}) {

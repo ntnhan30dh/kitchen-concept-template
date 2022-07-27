@@ -28,7 +28,7 @@ const IndexPage = () => {
         <MenuProvider>
           <Header intl={intl} locale={locale}/>
         </MenuProvider>
-        <Description intl={intl}/>
+        <Description intl={intl} locale={locale}/>
         {/* <Menu type={1} intl={intl} /> */}
         {/* <Menu type={2} /> */}
         {/* <Menu type={2} intl={intl} margin="left" />

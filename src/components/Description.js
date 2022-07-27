@@ -7,6 +7,7 @@ import DescriptionCard2 from "./descriptionCard2";
 const Description = (props) => {
   const style = useStyle();
   const intl = props.intl
+  const locale = props.locale
   const data = useStaticQuery(graphql`
     {
       allWpPage(filter: { title: { eq: "Description" } }) {
@@ -67,17 +68,20 @@ const Description = (props) => {
 
   return (
     <section className="description mt-10 " id="story">
-      <DescriptionCard
+      <h1>
+      {layout}
+      </h1>
+      {/* <DescriptionCard
         article={`${style.mx} ${layout1.article}`}
         text={layout1.text}
-        intl={intl}
-      />
+        intl={intl} locale={locale}
+      /> */}
       {/* <DescriptionCard article={`${style.mx}  mr-16  md:my-10  xl:my-24 md:flex  items-center`}  text="md:ml-10 xl:ml-32"/> */}
-      <DescriptionCard2
+      {/* <DescriptionCard2
         article={layout2.article}
         text={layout2.text}
         intl={intl}
-      />
+      /> */}
       {/* <DescriptionCard2 article="md:p-10 xl:p-24"  text="text-center pt-10 mx-auto"/>
     <DescriptionCard2 article="md:p-10 xl:p-24  md:flex  items-center justify-end"  text="pt-10 md:max-w-1/2 md:w-1/2"/> */}
     </section>
