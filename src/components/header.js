@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
-
-//import Scrollspy from 'react-scrollspy'
-//import logo from "../images/logo.png";
-//import logo_sm from "../images/logo_sm.png";
-
+//import { useIntl } from "gatsby-plugin-intl";
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import { useStyle } from "./context/styleContext";
 import OrderNow from "./orderNow";
@@ -15,8 +10,10 @@ const Header = (props) => {
   const toggleMenu = useMenuUpdate();
   const style = useStyle();
 
-  const intl = useIntl();
-  const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
+  // const intl = useIntl();
+  // const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
+  const intl = {locale:"en"}
+  const locale = "en"
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
