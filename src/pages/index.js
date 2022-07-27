@@ -31,8 +31,8 @@ const IndexPage = () => {
         <Description intl={intl}/>
         <Menu type={1} intl={intl} />
         {/* <Menu type={2} /> */}
-        <Menu type={2} intl={intl} margin="left" />
-        <Menu type={2} intl={intl} margin="right" />
+        {/* <Menu type={2} intl={intl} margin="left" />
+        <Menu type={2} intl={intl} margin="right" /> */}
         <Ig intl={intl} />
         {/* <Platform /> */}
         {/* <Footer /> */}
