@@ -8,7 +8,6 @@ import {  graphql, useStaticQuery } from "gatsby";
 
 const OrderNow = (props) =>{
      const [open, setOpen] = useState(false)
-     const intl = useIntl();
      const data = useStaticQuery(graphql`
     {
       allWpMenu {
@@ -44,6 +43,8 @@ const OrderNow = (props) =>{
       }
     }
   `);
+
+  const intl = useIntl();
 
 return (
          <Modal
