@@ -31,7 +31,7 @@ const IndexPage = () => {
         {/* <Menu type={2} intl={intl} margin="left" />
         <Menu type={2} intl={intl} margin="right" /> */}
         <Ig  />
-        {/* <Platform intl={intl} /> */}
+        <Platform />
         {/* <Footer /> */}
       </StyleProvider>
     </main>

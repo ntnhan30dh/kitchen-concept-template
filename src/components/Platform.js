@@ -1,10 +1,12 @@
 import React from "react";
 import {graphql, useStaticQuery } from "gatsby";
 import { useStyle } from "./context/styleContext";
+import { useIntl } from "gatsby-plugin-react-intl"
+
 
 const Platform = (props) => {
   const style = useStyle();
-  const intl = props.intl
+  const intl = useIntl();
     const data = useStaticQuery(graphql`
     {
       allWpPage(filter: {title: {eq: "Platform"}}) {
