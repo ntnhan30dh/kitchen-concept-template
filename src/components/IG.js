@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import {graphql, useStaticQuery } from "gatsby";
 import Slider from "react-slick"
-import { useIntl } from "gatsby-plugin-react-intl"
+//import { useIntl } from "gatsby-plugin-react-intl"
 
 
 import { useStyle } from "./context/styleContext";
@@ -9,7 +9,7 @@ import { useStyle } from "./context/styleContext";
 const Ig = (props) =>{
   const [insta, setInsta] = useState(undefined)
   const style = useStyle();
-  const intl = useIntl();
+  //const intl = useIntl();
   const data = useStaticQuery(graphql`
     {
       allWpPage(filter: {title: {eq: "Follow us"}}) {
@@ -48,7 +48,7 @@ const Ig = (props) =>{
 
   const content = data.allWpPage.edges
   .filter((n) => {
-    return n.node.language.slug === intl.locale;
+    return n.node.language.slug === props.locale;
   })[0].node
 
     const token = "IGQVJWRml3WEo0YndiY0VRN0pJVV9LSGVLamI0ZA2tfODJKaU9sckRtTEExNEEwaEJ2VUhNd3FudWdNanhFdkpQYXRNQVBnYm1kTjNDcGhiN3lscE9qdnh1UmVWLXNkWHM2YlVQOGZAQNGZAOaDJ6SVBydQZDZD1234"

@@ -10,11 +10,11 @@ import { MenuProvider } from "../components/context/menuContext";
 import { StyleProvider } from "../components/context/styleContext";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
-import Description from "../components/description";
-import Menu from "../components/menu";
+//import Footer from "../components/footer";
+//import Description from "../components/description";
+//import Menu from "../components/menu";
 import Ig from "../components/ig";
-import Platform from "../components/platform";
+//import Platform from "../components/platform";
 // markup
 const IndexPage = () => {
   let [windowIs, setWindowIs] = useState(typeof window !== "undefined");
@@ -35,12 +35,12 @@ const IndexPage = () => {
           <Header locale={lang} />
         </MenuProvider>
         <h1>{windowIs && locale}</h1>
-        <Description locale={lang} />
+        {/* <Description locale={lang} /> */}
         {/* <Menu type={1} /> */}
         {/* <Menu type={2} /> */}
         {/* <Menu type={2} intl={intl} margin="left" />
         <Menu type={2} intl={intl} margin="right" /> */}
-        {/* <Ig  /> */}
+        <Ig locale={lang} />
         {/* <Platform /> */}
         {/* <Footer /> */}
       </StyleProvider>

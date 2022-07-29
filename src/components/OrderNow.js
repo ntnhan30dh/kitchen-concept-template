@@ -9,8 +9,22 @@ const OrderNow = (props) =>{
     // const intl = useIntl();
 
 return (
-      <div> hi</div>
-    
+         <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={
+          <button className={props.button}>  <div className={`uppercase bg-blue text-white font-bold  tracking-wider ${props.padding}`}> "Order Now"
+ </div> </button>
+
+      }
+    >
+      <Modal.Header> "select country"</Modal.Header>
+      <Modal.Content>
+        <Modal.Description></Modal.Description>
+        <CountryList />
+      </Modal.Content>
+    </Modal>
 )
 }
 
