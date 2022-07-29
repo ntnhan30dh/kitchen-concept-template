@@ -2,12 +2,12 @@ import React from "react";
 import {graphql, useStaticQuery } from "gatsby";
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
-import { useIntl } from "gatsby-plugin-react-intl"
+//import { useIntl } from "gatsby-plugin-react-intl"
 
 
 const DescriptionCard2 = (props) => {
     const style = useStyle()
-    const intl = useIntl();
+    //const intl = useIntl();
     const data = useStaticQuery(graphql`
     {
       allWpPage (filter: {title:{eq:"Description"}}) {
@@ -36,7 +36,7 @@ const DescriptionCard2 = (props) => {
 
   const content = data.allWpPage.edges
   .filter((n) => {
-    return n.node.language.slug === intl.locale;
+    return n.node.language.slug === props.locale;
   })[0].node.imageAndTextSection.imageAndText
 
   return (

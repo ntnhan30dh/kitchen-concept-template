@@ -3,13 +3,13 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import { useMenu, useMenuUpdate } from "./context/menuContext";
 import { useStyle } from "./context/styleContext";
 import OrderNow from "./orderNow";
-import { useIntl } from "gatsby-plugin-react-intl"
+//import { useIntl } from "gatsby-plugin-react-intl"
 const Header = (props) => {
   const menuState = useMenu();
   const toggleMenu = useMenuUpdate();
   const style = useStyle();
-  const intl = useIntl();
-  const locale = intl.locale !== "en" ? `/${intl.locale}` : "";
+  //const intl = useIntl();
+  const locale = props.locale !== "en" ? `/${props.locale}` : "";
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -59,7 +59,7 @@ const Header = (props) => {
     return n.node.name;
   })
   .filter((n) => {
-    return n.node.name === intl.locale;
+    return n.node.name === props.locale;
   })
   const logo =
     data.allWpHeaderLogo.edges[0].node.headerLogo.logoBig.localFile.url;
@@ -76,7 +76,7 @@ const Header = (props) => {
 
   return (
     <header className="headerWrapper relative z-50 w-full sticky top-0 bg-pink  bg-white ">
-      <h1>{`Current locale: ${intl.locale}`}</h1>
+      <h1>{`Current locale: ${props.locale}`}</h1>
       <nav
         className={`nav md:flex justify-between items-center  flex-row ${style.mx}  py-2 `}
       >
@@ -92,7 +92,7 @@ const Header = (props) => {
           items={["story", "behindTheBeans", "howToOrder", "news"]}
           currentClassName="opacity-100 border-t-4 border-white text-blue bg-blue "
         >
-          {items[0].node.menuItems.nodes.map((i) => {
+          {items[0]&&items[0].node.menuItems.nodes.map((i) => {
             return (
               <Link
                 to={`${locale}/#${i.title}`}
@@ -107,7 +107,7 @@ const Header = (props) => {
           })}
 
           {/* <Link to="/#story" href="story" className={link1}>
-              <span className={span1}>{intl.formatMessage({ id: "Our Story" })}</span>
+              <span className={span1}>{props.formatMessage({ id: "Our Story" })}</span>
               
             </Link>
          
@@ -134,14 +134,14 @@ const Header = (props) => {
           <div to="/" href="" className={link1}>
             <Link
               to="/"
-              className={`  ${intl.locale === "en" ? "font-bold" : ""} `}
+              className={`  ${props.locale === "en" ? "font-bold" : ""} `}
             >
               {" "}
               Eng{" "}
             </Link>{" "}
             |{" "}
             <Link
-              className={`  ${intl.locale === "es" ? "font-bold" : ""} `}
+              className={`  ${props.locale === "es" ? "font-bold" : ""} `}
               to="/es"
             >
               {" "}

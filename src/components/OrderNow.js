@@ -1,12 +1,12 @@
 import React, { useState} from "react";
 import { Modal } from "semantic-ui-react"
 import CountryList from "./countrylist"
-import { useIntl } from "gatsby-plugin-react-intl"
+//import { useIntl } from "gatsby-plugin-react-intl"
 
 
 const OrderNow = (props) =>{
      const [open, setOpen] = useState(false)
-     const intl = useIntl();
+    // const intl = useIntl();
 
 return (
          <Modal
@@ -14,12 +14,12 @@ return (
       onOpen={() => setOpen(true)}
       open={open}
       trigger={
-          <button className={props.button}>  <div className={`uppercase bg-blue text-white font-bold  tracking-wider ${props.padding}`}>{intl.formatMessage({ id: "Order Now" })}
+          <button className={props.button}>  <div className={`uppercase bg-blue text-white font-bold  tracking-wider ${props.padding}`}> "Order Now"
  </div> </button>
 
       }
     >
-      <Modal.Header> {intl.formatMessage({ id: "select country" })}</Modal.Header>
+      <Modal.Header> "select country"</Modal.Header>
       <Modal.Content>
         <Modal.Description></Modal.Description>
         <CountryList />

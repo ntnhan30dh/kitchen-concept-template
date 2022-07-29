@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState }   from "react"
 import {graphql, useStaticQuery } from "gatsby";
 import {useStyle} from './context/styleContext'
 import OrderNow from './orderNow'
-import { useIntl } from "gatsby-plugin-react-intl"
+//import { useIntl } from "gatsby-plugin-react-intl"
 
 const DescriptionCard = (props) => {
     const style = useStyle()
-    const intl = useIntl();
+    //const intl = useIntl();
     const data = useStaticQuery(graphql`
     {
       allWpPage (filter: {title:{eq:"Description"}}) {
@@ -35,7 +35,7 @@ const DescriptionCard = (props) => {
 
   const content = data.allWpPage.edges
   .filter((n) => {
-    return n.node.language.slug === intl.locale;
+    return n.node.language.slug === props.locale;
   })[0].node.imageAndTextSection.imageAndText
 
 
@@ -56,6 +56,10 @@ const DescriptionCard = (props) => {
     
   return (
     <article className={`descriptionCard ${props.article} mb-12`}>
+      <h1>
+        
+      {console.log("locale",props.locale)}
+      </h1>
     <div
         parallaxData={ parallaxData }
        className={`  mt-10 mb-8`}>
@@ -66,7 +70,8 @@ const DescriptionCard = (props) => {
       <p className={`${style.text.body1} mt-2 md:mt-3`}>
       {content.copy} 
       </p>
-      <OrderNow padding=" py-4 md:py-5 md:px-10 my-10" button="w-full md:w-auto"/>
+      <OrderNow padding=" 
+      py-4 md:py-5 md:px-10 my-10" button="w-full md:w-auto"/>
       </div>
     </article>
   );
