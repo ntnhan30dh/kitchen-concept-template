@@ -35,7 +35,7 @@ const IndexPage = () => {
           <Header locale={lang} />
         </MenuProvider>
         <h1>{windowIs && locale}</h1>
-        {/* <Description locale={lang} /> */}
+        <Description locale={lang} />
         {/* <Menu type={1} /> */}
         {/* <Menu type={2} /> */}
         {/* <Menu type={2} intl={intl} margin="left" />
